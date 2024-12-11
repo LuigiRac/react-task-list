@@ -10,12 +10,18 @@ const person = {
 function App() {
   // parte logica
 
-  function tasksList() {
-    let item = tasks.map((task) => {
-      return <li key={task.id}> {task.state}</li >;
-    });
+  function currentTasks() {
+    let currentItems = tasks.filter((task) => task.state.includes('backlog') || task.state.includes('in_progress')).map((task) => <li key={task.id} > <strong>{task.title}</strong> {task.state} Priority:{task.priority} Est. Time {task.estimatedTime}</ li>
+    )
 
-    return item
+    return currentItems
+  };
+
+  function completedTasks() {
+    let completedItems = tasks.filter((task) => task.state.includes('completed')).map((task) => <li key={task.id} > <strong>{task.title}</strong> {task.state} Priority:{task.priority} Est. Time {task.estimatedTime}</ li>
+    )
+
+    return completedItems
   };
 
 
@@ -27,10 +33,10 @@ function App() {
 
       <main className="container">
         <h2>Current Tasks</h2>
-        <ul>{tasksList()}</ul>
+        <ul>{currentTasks()}</ul>
 
         <h2>Completed Tasks</h2>
-        <ul>{tasksList()}</ul>
+        <ul>{completedTasks()}</ul>
       </main>
 
     </>
