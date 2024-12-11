@@ -10,6 +10,13 @@ const person = {
 function App() {
   // parte logica
 
+  function tasksList() {
+    let item = tasks.map((task) => {
+      return <li key={task.id}> {task.state}</li >;
+    });
+
+    return item
+  };
 
 
 
@@ -18,9 +25,14 @@ function App() {
     <>
       <HeaderComponent />
 
-      <main></main>
+      <main className="container">
+        <h2>Current Tasks</h2>
+        <ul>{tasksList()}</ul>
 
-      <footer></footer>
+        <h2>Completed Tasks</h2>
+        <ul>{tasksList()}</ul>
+      </main>
+
     </>
 
   );
