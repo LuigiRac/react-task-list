@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './index.css'
 
 function App() {
   // parte logica
-  const title = "Hello Word!";
+  const title = "Task Manager";
   const block = "Main";
   const endPage = "footer";
 
@@ -13,12 +13,15 @@ function App() {
   return (
     <>
       <header>
-        <h1 className='text-danger'>{title}</h1>
+        <nav className="navbar bg-green-water">
+          <span className="navbar-brand fw-bold m-2">{title}</span>
+        </nav>
+
       </header>
 
-      <main>{block}</main>
+      <main></main>
 
-      <footer>{endPage}</footer>
+      <footer></footer>
     </>
 
   );
