@@ -1,62 +1,21 @@
 
 import './index.css'
 import HeaderComponent from "./Component/HeaderComponent.jsx";
-import tasks from "./data/tasks.js";
+import MainComponent from "./Component/MainComponent.jsx";
+
 
 
 function App() {
   // parte logica
-
-  function currentTasks() {
-    let currentItems = tasks.filter((task) => task.state.includes('backlog') || task.state.includes('in_progress')).map((task) =>
-
-      <li key={task.id} >
-
-        <div> <strong>{task.title}</strong> {task.state} </div>
-        <div>Priority:{task.priority} </div>
-        <div>Est. Time {task.estimatedTime}</div>
-      </ li>);
-
-    return currentItems
-
-  };
-
-
-  function completedTasks() {
-    let completedItems = tasks.filter((task) => task.state.includes('completed')).map((task) =>
-
-      <li key={task.id} >
-        <strong>{task.title}</strong>
-        <div>{task.state} </div>
-        <div>Priority:{task.priority} </div>
-        <div>Est. Time {task.estimatedTime}</div>
-      </ li>);
-
-    return completedItems
-  };
-
 
 
   //parte html
   return (
     <>
       <HeaderComponent />
-
-      <main className="container">
-        <h2>Current Tasks ({currentTasks().length})</h2>
-        <ul className='list-style'>{currentTasks()}</ul>
-
-
-
-
-        <h2>Completed Tasks ({completedTasks().length})</h2>
-        <ul className='list-style'>{completedTasks()}</ul>
-      </main>
-
+      <MainComponent />
     </>
-
   );
-
 }
 
 export default App;
