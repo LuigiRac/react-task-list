@@ -1,3 +1,7 @@
 .bg-green-water {
     background-color: #7fffd3;
 }
+
+.list-style {
+    list-style: none;
+}
