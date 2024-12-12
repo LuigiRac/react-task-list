@@ -1,7 +1,30 @@
+/* HEADER COMPONENT */
+
 .bg-green-water {
     background-color: #7fffd3;
 }
 
 .list-style {
     list-style: none;
+}
+
+
+/* MAIN COMPONENT */
+
+/* .fl-left {
+    float: left;
+} */
+
+.bg-orange {
+    background-color: #D2691E;
+    color: white;
+}
+
+/* .state {
+    padding: 3px 12px;
+    text-align: center;
+} */
+
+.d-flex .margin-r {
+    margin-right: 10px;
 }
